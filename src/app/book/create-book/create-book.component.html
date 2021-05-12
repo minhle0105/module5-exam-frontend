@@ -1,1 +1,19 @@
-<p>create-book works!</p>
+<a routerLink="/books">Book List</a>
+<div class="container">
+  <form #bookForm="ngForm" (ngSubmit)="addNewBook(bookForm)">
+    <h1>Add New Book</h1>
+    <div class="mb-3">
+      <label for="bookTitle" class="form-label">Book Title</label>
+      <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="bookTitle">
+    </div>
+    <div class="mb-3">
+      <label for="bookAuthor" class="form-label">Book Author</label>
+      <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="bookAuthor">
+    </div>
+    <div class="mb-3">
+      <label for="bookDescription" class="form-label">Book Description</label>
+      <input [(ngModel)]="book.description" name="description" class="form-control" id="bookDescription">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
