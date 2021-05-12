@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Có {{listBooks.length}} cuốn sách</h3>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <button class="btn btn-primary">Thêm sách mới</button>
+    </div>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Author</th>
+    <th scope="col">Description</th>
+    <th scope="col" colspan="2" style="text-align: center">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let book of listBooks; index as i">
+    <tr>
+      <th>{{i + 1}}</th>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.description}}</td>
+      <td>
+        <a class="btn btn-success" [routerLink]="['/books/edit', book.id]">Update</a>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
