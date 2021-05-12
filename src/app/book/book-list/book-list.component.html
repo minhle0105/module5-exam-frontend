@@ -1,36 +1,38 @@
-<div class="container">
+<div class="container" style="margin-top: 5px; box-shadow: 5px 5px 10px 10px orangered">
   <div class="row">
     <div class="col-md-3">
       <h3>Total number of books: {{listBooks.length}}</h3>
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-3">
-      <a class="btn btn-primary" routerLink="/books/createNewBook">Add new book</a>
+      <a style="margin-top: 5px" class="btn btn-primary" routerLink="/books/createNewBook">Add new book</a>
     </div>
   </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col" colspan="2" style="text-align: center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let book of listBooks; index as i">
+        <tr>
+          <th>{{i + 1}}</th>
+          <td><a [routerLink]="['/books/details', book.id]">{{book.title}}</a></td>
+          <td>{{book.author}}</td>
+          <td style="text-align: center">
+            <a class="btn btn-success" [routerLink]="['/books/edit', book.id]">Update</a>
+          </td>
+          <td style="text-align: center">
+            <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
 </div>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Author</th>
-    <th scope="col" colspan="2" style="text-align: center">Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <ng-container *ngFor="let book of listBooks; index as i">
-    <tr>
-      <th>{{i + 1}}</th>
-      <td><a [routerLink]="['/books/details', book.id]">{{book.title}}</a></td>
-      <td>{{book.author}}</td>
-      <td style="text-align: center">
-        <a class="btn btn-success" [routerLink]="['/books/edit', book.id]">Update</a>
-      </td>
-      <td style="text-align: center">
-        <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
-      </td>
-    </tr>
-  </ng-container>
-  </tbody>
-</table>
