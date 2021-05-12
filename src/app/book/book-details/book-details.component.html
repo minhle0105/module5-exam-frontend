@@ -1,24 +1,35 @@
 <style>
-  input {
+  td, th {
     border: 0;
   }
 </style>
-<a class="btn btn-primary" routerLink="/books">Book List</a>
 <div class="container">
-  <form [formGroup]="bookForm">
-    <h1>Book Information</h1>
-    <div class="mb-3">
-      <label for="bookTitle" class="form-label">Book Title</label>
-      <input readonly type="text" formControlName="title" name="title" class="form-control" id="bookTitle">
+  <div class="row">
+    <div class="col-md-3">
+      <h1>Book Details</h1>
     </div>
-    <div class="mb-3">
-      <label for="bookAuthor" class="form-label">Book Author</label>
-      <input readonly type="text" formControlName="author" name="author" class="form-control" id="bookAuthor">
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <a class="btn btn-primary" routerLink="/books">Book List</a>
     </div>
-    <div class="mb-3">
-      <label for="bookDescription" class="form-label">Book Description</label>
-      <input readonly type="text" formControlName="description" name="description" class="form-control" id="bookDescription">
-    </div>
-  </form>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>Title:</td>
+        <td>{{book.title}}</td>
+      </tr>
+      <tr>
+        <td>Author:</td>
+        <td>{{book.author}}</td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td>{{book.description}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 

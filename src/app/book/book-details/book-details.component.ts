@@ -12,11 +12,6 @@ import {ActivatedRoute} from '@angular/router';
 export class BookDetailsComponent implements OnInit {
   book: Book = {};
   currentId: number = -1;
-  bookForm = new FormGroup( {
-    title: new FormControl(),
-    author: new FormControl(),
-    description: new FormControl()
-  })
   constructor(private bookService: BookService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -29,16 +24,12 @@ export class BookDetailsComponent implements OnInit {
   }
 
   get id() {
-    return this.bookForm.get('id');
+    return this.book.id;
   }
 
   getBookById(id: number) {
-    this.bookService.getBookById(id).subscribe(thisbook => {
-      this.bookForm = new FormGroup({
-        title: new FormControl(thisbook.title),
-        author: new FormControl(thisbook.author),
-        description: new FormControl(thisbook.description)
-      })
+    this.bookService.getBookById(id).subscribe(thisBook => {
+      this.book = thisBook;
     })
   }
 
