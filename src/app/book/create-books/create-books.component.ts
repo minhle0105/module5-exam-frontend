@@ -4,11 +4,12 @@ import {BookService} from '../../service/book.service';
 import {NgForm} from '@angular/forms';
 
 @Component({
-  selector: 'app-create-book',
-  templateUrl: './create-book.component.html',
-  styleUrls: ['./create-book.component.css']
+  selector: 'app-create-books',
+  templateUrl: './create-books.component.html',
+  styleUrls: ['./create-books.component.css']
 })
-export class CreateBookComponent implements OnInit {
+export class CreateBooksComponent implements OnInit {
+
   book: Book = {};
   constructor(private bookService: BookService) { }
 
@@ -26,7 +27,5 @@ export class CreateBookComponent implements OnInit {
       alert("Fail to add");
     });
   }
-
-
 
 }

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateBookComponent } from './book/create-book/create-book.component';
 import { SearchBookComponent } from './book/search-book/search-book.component';
 import { BookListComponent } from './book/book-list/book-list.component';
 import { UpdateBookComponent } from './book/update-book/update-book.component';
@@ -12,15 +11,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BookDetailsComponent } from './book/book-details/book-details.component';
+import { CreateBooksComponent } from './book/create-books/create-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateBookComponent,
     SearchBookComponent,
     BookListComponent,
     UpdateBookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    CreateBooksComponent
   ],
   imports: [
     BrowserModule,

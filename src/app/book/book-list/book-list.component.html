@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-3">
-      <a class="btn btn-primary" routerLink="/books/create">Add new book</a>
+      <a class="btn btn-primary" routerLink="/books/createNewBook">Add new book</a>
     </div>
   </div>
 </div>
@@ -22,7 +22,7 @@
   <ng-container *ngFor="let book of listBooks; index as i">
     <tr>
       <th>{{i + 1}}</th>
-      <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
+      <td><a [routerLink]="['/books/details', book.id]">{{book.title}}</a></td>
       <td>{{book.author}}</td>
       <td style="text-align: center">
         <a class="btn btn-success" [routerLink]="['/books/edit', book.id]">Update</a>
