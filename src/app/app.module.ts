@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { BookDetailsComponent } from './book/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     CreateBookComponent,
     SearchBookComponent,
     BookListComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
