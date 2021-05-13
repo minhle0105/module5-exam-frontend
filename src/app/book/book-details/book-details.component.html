@@ -31,5 +31,14 @@
       </tbody>
     </table>
   </div>
+  <div class="row">
+    <div class="col-md-3 offset-3">
+      <a class="btn btn-success" [routerLink]="['/books/edit', book.id]">Update</a>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-danger" (click)="deleteBook(book.id)" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
 

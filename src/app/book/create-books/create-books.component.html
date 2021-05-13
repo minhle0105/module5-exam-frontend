@@ -1,19 +1,28 @@
-<a routerLink="/books">Book List</a>
 <div class="container" style="margin-top: 5px; box-shadow: 5px 5px 10px 10px orangered">
-  <form #bookForm="ngForm" (ngSubmit)="addNewBook(bookForm)">
-    <h1>Add New Book</h1>
-    <div class="mb-3">
-      <label for="bookTitle" class="form-label">Book Title</label>
-      <input [(ngModel)]="book.title" name="title" type="text" class="form-control" id="bookTitle">
+  <div class="row">
+    <div class="col-md-3">
+      <h1>Add New Book</h1>
     </div>
-    <div class="mb-3">
-      <label for="bookAuthor" class="form-label">Book Author</label>
-      <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="bookAuthor">
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <a style="margin-top: 5px" class="btn btn-primary" routerLink="/books">Book List</a>
     </div>
-    <div class="mb-3">
-      <label for="bookDescription" class="form-label">Book Description</label>
-      <input [(ngModel)]="book.description" name="description" class="form-control" id="bookDescription">
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-  </form>
+  </div>
+  <div class="row">
+    <form #bookForm="ngForm" (ngSubmit)="addNewBook(bookForm)">
+      <div class="mb-3">
+        <label for="bookTitle" class="form-label">Book Title</label>
+        <input [(ngModel)]="book.title" name="title" type="text" class="form-control" id="bookTitle">
+      </div>
+      <div class="mb-3">
+        <label for="bookAuthor" class="form-label">Book Author</label>
+        <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="bookAuthor">
+      </div>
+      <div class="mb-3">
+        <label for="bookDescription" class="form-label">Book Description</label>
+        <textarea [(ngModel)]="book.description" name="description" class="form-control" id="bookDescription"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
 </div>
